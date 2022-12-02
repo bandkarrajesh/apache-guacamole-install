@@ -12,3 +12,16 @@ cd guacamole-server-1.3.0/
 make
 make install
 ldconfig
+
+cd /tmp
+wget https://dlcdn.apache.org/guacamole/1.3.0/source/guacamole-client-1.3.0.tar.gz
+tar zxfv guacamole-client-1.3.0.tar.gz
+cd guacamole-client-1.3.0/
+mvn package
+
+cd /opt/
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.12/bin/apache-tomcat-10.0.12.tar.gz
+tar zxfv apache-tomcat-10.0.12.tar.gz
+cd apache-tomcat-10.0.12/webapps
+
+wget https://dlcdn.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war
